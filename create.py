@@ -6,22 +6,25 @@ from pathlib import Path
 import re
 
 # ==========================================
-# ⚙️ 사용자 설정 (User Configuration) - 🚨 본인 정보로 수정 필수
+# ⚙️ 사용자 설정 (User Configuration) - 🚨 경로 확인 필수!
 # ==========================================
-MY_GITHUB_ID = "ju1115"               # 본인 깃허브 아이디
-MY_ALGO_REPO = "Study_algorithm"      # 알고리즘 레포지토리 이름
+MY_GITHUB_ID = "ju1115"
+MY_ALGO_REPO = "Study_algorithm"
+
+# 💡 핵심: 내 컴퓨터에 있는 'Study_algorithm' 폴더의 위치를 지정합니다.
+# "현재 폴더(Study_log)의 상위 폴더(..) 옆에 있는 Study_algorithm 폴더"를 의미합니다.
+LOCAL_ALGO_DIR = Path("../Study_algorithm").resolve()
 
 # ==========================================
-# ⚙️ 시스템 설정 (System Configuration)
+# ⚙️ 시스템 설정
 # ==========================================
 POSTS_DIR = Path("posts")
 README_FILE = Path("README.md")
 
 # ==========================================
-# 📝 템플릿 정의 (Templates)
+# 📝 템플릿 정의
 # ==========================================
-
-# 1. Computer Science
+# ... (CS, Lang, Infra, Arch 템플릿은 기존과 동일하므로 생략, 아래에서 전체 코드로 제공) ...
 TEMPLATE_CS = """---
 title: "{title}"
 date: "{date}"
@@ -30,7 +33,7 @@ tags: [{user_input}]
 description: "Deep dive into CS fundamentals."
 ---
 
-# 🏛️ {title}
+# 🏛️ `{title}`
 
 ## 📌 Abstract (핵심 요약)
 > 
@@ -50,7 +53,6 @@ description: "Deep dive into CS fundamentals."
 ## 📚 Reference
 """
 
-# 2. Language & Framework
 TEMPLATE_LANG = """---
 title: "{title}"
 date: "{date}"
@@ -59,7 +61,7 @@ tags: [{user_input}]
 description: "Practical usage of {user_input}."
 ---
 
-# 🛠️ {title}
+# 🛠️ `{title}`
 
 ## 🎯 Goal (목표)
 <!-- 무엇을 구현하기 위해 학습했는가? -->
@@ -80,7 +82,6 @@ description: "Practical usage of {user_input}."
 - 주의할 점 (Gotchas): 
 """
 
-# 3. Infrastructure
 TEMPLATE_INFRA = """---
 title: "{title}"
 date: "{date}"
@@ -89,7 +90,7 @@ tags: [{user_input}, DevOps]
 description: "Infrastructure as Code and Deployment."
 ---
 
-# ☁️ {title}
+# ☁️ `{title}`
 
 ## 🏗️ Topology (구조도)
 <!-- Mermaid 다이어그램 혹은 텍스트 설명 -->
@@ -115,7 +116,6 @@ graph TD;
 - 환경 변수(Env Var) 설정했는가?
 """
 
-# 4. Architecture
 TEMPLATE_ARCH = """---
 title: "{title}"
 date: "{date}"
@@ -124,7 +124,7 @@ tags: [{user_input}, DesignPattern]
 description: "System Design and Architecture Decisions."
 ---
 
-# 📐 {title}
+# 📐 `{title}`
 
 ## 🧐 Context (배경)
 <!-- 왜 이런 설계가 필요한가? -->
@@ -141,7 +141,7 @@ description: "System Design and Architecture Decisions."
 ## 🎓 Conclusion
 """
 
-# 5. Problem Solving (알고리즘) - 🚀 고급 검색 링크 적용
+# 5. Problem Solving (알고리즘) - ✅ "Local Path Mapping" 적용
 TEMPLATE_PS = """---
 title: "{title}"
 date: "{date}"
@@ -150,11 +150,11 @@ tags: [{user_input}, Algorithm]
 description: "Key strategy and lessons learned."
 ---
 
-# 🧠 {title}
+# 🧠 `{title}`
 
 ## 🔗 Problem Info
 - **Problem:** [BOJ {prob_num}번]({prob_url})
-- **My Solution:** [내 풀이 검색(Github)]({sol_url})
+- **My Solution:** [내 풀이 보기(Github)]({sol_url})
 - **Level:** 
 ## 💡 Strategy (핵심 접근법)
 <!-- 문제를 관통하는 핵심 아이디어와 자료구조 선정 이유 -->
@@ -176,7 +176,6 @@ description: "Key strategy and lessons learned."
 - **Space:** O()
 """
 
-# 6. Troubleshooting
 TEMPLATE_TS = """---
 title: "{title}"
 date: "{date}"
@@ -185,7 +184,7 @@ tags: [{user_input}, Debugging]
 description: "Root cause analysis and resolution."
 ---
 
-# 🚨 {title}
+# 🚨 `{title}`
 
 ## 💣 The Issue (현상)
 > **Error Log:**
@@ -207,7 +206,6 @@ description: "Root cause analysis and resolution."
 - 다시는 같은 실수를 반복하지 않기 위해:
 """
 
-# 7. Review & Retrospect
 TEMPLATE_REVIEW = """---
 title: "{title}"
 date: "{date}"
@@ -216,20 +214,20 @@ tags: [{user_input}, Insight]
 description: "Retrospective and Thoughts."
 ---
 
-# 📝 {title}
+# 📝 `{title}`
 
 ## 📅 Summary
 <!-- 프로젝트/기간/이벤트 요약 -->
 
 ## 🌟 Key Takeaways (배운 점)
-### 1. **Keep (좋았던 점):** 
-### 2. **Problem (아쉬웠던 점):** 
-### 3. **Try (시도할 점):** 
+1. **Keep (좋았던 점):** 
+2. **Problem (아쉬웠던 점):** 
+3. **Try (시도할 점):** 
 ## 💬 Conclusion
 """
 
 # ==========================================
-# 🧠 로직: 스마트 매핑 및 링크 생성
+# 🧠 로직: 스마트 매핑 및 파일 추적
 # ==========================================
 
 def get_template_and_category(user_input):
@@ -251,6 +249,38 @@ def get_template_and_category(user_input):
 def slugify(text):
     return text.strip().replace(" ", "-").replace("/", "-")
 
+def find_local_algo_file(prob_num):
+    """
+    내 컴퓨터의 'Study_algorithm' 폴더를 뒤져서 진짜 파일 경로를 찾아냅니다.
+    검색 API를 안 쓰기 때문에 100% 정확하고 빠릅니다.
+    """
+    if not LOCAL_ALGO_DIR.exists():
+        print(f"⚠️  [경고] 알고리즘 폴더를 찾을 수 없습니다: {LOCAL_ALGO_DIR}")
+        print("    create.py 상단의 LOCAL_ALGO_DIR 경로 설정을 확인해주세요.")
+        return None
+    
+    # Study_algorithm 폴더 아래의 모든 하위 폴더를 뒤져서
+    # 파일명에 문제번호가 포함된 파일을 찾습니다. (예: *25757*.java)
+    print(f"🔍  로컬 파일 스캔 중... (Target: *{prob_num}*)")
+    found_files = list(LOCAL_ALGO_DIR.rglob(f"*{prob_num}*"))
+    
+    # .class 파일이나 .exe 파일 등은 제외하고 소스코드만 필터링
+    source_files = [f for f in found_files if f.suffix in ['.java', '.py', '.cpp', '.js']]
+
+    if source_files:
+        # 첫 번째 찾은 파일 선택
+        target_file = source_files[0]
+        
+        # 절대 경로를 'Study_algorithm' 기준 상대 경로로 변환
+        # 예: C:/User/.../BOJ/2511/File.java -> BOJ/2511/File.java
+        try:
+            rel_path = target_file.relative_to(LOCAL_ALGO_DIR)
+            # 윈도우 경로(\)를 웹 URL 경로(/)로 변환
+            return str(rel_path).replace("\\", "/")
+        except ValueError:
+            return None
+    return None
+
 def create_post(title, user_category_input):
     if not POSTS_DIR.exists():
         POSTS_DIR.mkdir()
@@ -271,8 +301,9 @@ def create_post(title, user_category_input):
         "user_input": user_category_input
     }
 
-    # [알고리즘 전용] 문제 번호 추출 및 고급 검색 링크 생성
+    # [알고리즘 전용] 로컬 파일 스캔 -> 정적 링크 생성
     if category_name == "Problem Solving":
+        # 숫자 추출
         num_match = re.search(r'(\d+)', title)
         
         if num_match:
@@ -280,12 +311,20 @@ def create_post(title, user_category_input):
             context["prob_num"] = prob_num
             context["prob_url"] = f"https://www.acmicpc.net/problem/{prob_num}"
             
-            # 🚀 수정됨: Repo 필터 + Filename 필터 적용된 강력한 검색 링크
-            # 형식: https://github.com/search?q=repo:아이디/레포+filename:번호&type=code
-            search_query = f"repo:{MY_GITHUB_ID}/{MY_ALGO_REPO}+filename:{prob_num}"
-            context["sol_url"] = f"https://github.com/search?q={search_query}&type=code"
+            # 1. 로컬에서 실제 파일 경로 찾기
+            real_path = find_local_algo_file(prob_num)
             
-            print(f"   🔍 고급 검색 링크 생성: {context['sol_url']}")
+            if real_path:
+                # 2. 찾은 경로를 이용해 GitHub 'blob' (파일 보기) 링크 조합
+                # 검색(search) 링크가 아니라 실제 파일 주소입니다.
+                context["sol_url"] = f"https://github.com/{MY_GITHUB_ID}/{MY_ALGO_REPO}/blob/main/{real_path}"
+                print(f"   ✅  파일 매핑 성공: {real_path}")
+                print(f"   🔗  링크 생성: {context['sol_url']}")
+            else:
+                # 파일을 못 찾았을 경우 (아직 안 풀었거나, 로컬 경로가 틀렸거나)
+                # 이럴 때만 최후의 수단으로 검색 링크를 씁니다.
+                context["sol_url"] = f"https://github.com/{MY_GITHUB_ID}/{MY_ALGO_REPO}/search?q={prob_num}"
+                print(f"   ⚠️  로컬 파일을 찾지 못했습니다. 검색 링크로 대체합니다.")
         else:
             context["prob_num"] = "???"
             context["prob_url"] = "#"
@@ -358,7 +397,7 @@ def update_readme():
 
 이 레포지토리는 `create.py` 스크립트로 관리됩니다. (키워드 자동 감지)
 
-- **알고리즘**: `python create.py "백준 25757번 임스와 함께" -c Algo` (고급 검색 링크 자동생성!)
+- **알고리즘**: `python create.py "백준 25757번 임스와 함께" -c Algo` (로컬 파일 자동 매핑!)
 - **에러 해결**: `python create.py "에러메시지" -c Error`
 - **CS 지식**: `python create.py "개념이름" -c CS`
 - **인프라**: `python create.py "주제" -c AWS`

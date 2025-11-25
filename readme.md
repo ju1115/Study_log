@@ -11,7 +11,7 @@
 
 이 레포지토리는 `create.py` 스크립트로 관리됩니다. (키워드 자동 감지)
 
-- **알고리즘**: `python create.py "백준 25757번 임스와 함께" -c Algo` (고급 검색 링크 자동생성!)
+- **알고리즘**: `python create.py "백준 25757번 임스와 함께" -c Algo` (로컬 파일 자동 매핑!)
 - **에러 해결**: `python create.py "에러메시지" -c Error`
 - **CS 지식**: `python create.py "개념이름" -c CS`
 - **인프라**: `python create.py "주제" -c AWS`
