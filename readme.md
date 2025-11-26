@@ -26,9 +26,22 @@
 
 ## 🧭 Navigation
 
-Total Artifacts: **3**
+Total Artifacts: **7**
 
 --- 
+### 🏛️ Computer Science
+
+- `2025-11-26` [javascript_engine_저장소](posts/2025-11-26-javascript_engine_저장소.md) `#CS`
+
+### 🛠️ Language & Framework
+
+- `2025-11-26` [react_definition_그리고_call](posts/2025-11-26-react_definition_그리고_call.md) `#React`
+- `2025-11-26` [React 화면 생성 과정과 렌더링 전략 (CSR vs SSG)](posts/2025-11-26-react_화면_생성_과정.md) `#React, Next.js, CSR, SSG, Vite`
+
+### ☁️ Infrastructure
+
+- `2025-11-26` [portfolio용_github_page](posts/2025-11-26-portfolio용_github_page.md) `#git, DevOps`
+
 ### 🧠 Problem Solving
 
 - `2025-11-25` [1967_트리의_지름](posts/2025-11-25-1967_트리의_지름.md) `#Algo, Algorithm`

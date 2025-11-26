@@ -236,7 +236,7 @@ def get_template_and_category(user_input):
         return "Problem Solving", TEMPLATE_PS
     if any(k in keyword for k in ['error', 'fix', 'debug', 'fail', 'issue', '에러', '버그', '트러블']):
         return "Troubleshooting", TEMPLATE_TS
-    if any(k in keyword for k in ['docker', 'aws', 'k8s', 'jenkins', 'ci', 'cd', 'nginx', 'cloud', 'linux', 'server']):
+    if any(k in keyword for k in ['docker', 'aws', 'k8s', 'jenkins', 'ci', 'cd', 'nginx', 'cloud', 'linux', 'server','git']):
         return "Infrastructure", TEMPLATE_INFRA
     if any(k in keyword for k in ['archi', 'design', 'pattern', 'msa', 'ddd', 'system', 'clean', '설계']):
         return "Architecture", TEMPLATE_ARCH
