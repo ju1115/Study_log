@@ -26,20 +26,24 @@
 
 ## 🧭 Navigation
 
-Total Artifacts: **7**
+Total Artifacts: **11**
 
 --- 
 ### 🏛️ Computer Science
 
-- `2025-11-26` [javascript_engine_저장소](posts/2025-11-26-javascript_engine_저장소.md) `#CS`
+- `2025-11-26` [javascript_engine_저장소](posts/2025-11-26-javascript_engine_저장소.md) `#CS, JavaScript, V8, Memory`
 
 ### 🛠️ Language & Framework
 
-- `2025-11-26` [react_definition_그리고_call](posts/2025-11-26-react_definition_그리고_call.md) `#React`
+- `2025-11-27` [RSC_Dynamic_VS_Static](posts/2025-11-27-RSC_Dynamic_VS_Static.md) `#Next.js, RSC, AppRouter, Optimization`
+- `2025-11-27` [RSC_중심_아키텍처_및_최적화](posts/2025-11-27-RSC_중심_아키텍처.md) `#Next.js, RSC, AppRouter, Optimization`
+- `2025-11-27` [브라우저_저장소_4대장_정리](posts/2025-11-27-브라우저_저장소.md) `#FrontEnd, Browser, Storage, Cookie`
+- `2025-11-26` [React의 생명주기: Definition부터 Mount까지](posts/2025-11-26-react_definition_그리고_call.md) `#React, JavaScript, Rendering, Lifecycle`
 - `2025-11-26` [React 화면 생성 과정과 렌더링 전략 (CSR vs SSG)](posts/2025-11-26-react_화면_생성_과정.md) `#React, Next.js, CSR, SSG, Vite`
 
 ### ☁️ Infrastructure
 
+- `2025-11-27` [githubpage를_위한_static_page_settings](posts/2025-11-27-githubpage를_위한_static_page_settings.md) `#Git, DevOps`
 - `2025-11-26` [portfolio용_github_page](posts/2025-11-26-portfolio용_github_page.md) `#git, DevOps`
 
 ### 🧠 Problem Solving
