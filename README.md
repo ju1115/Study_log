@@ -26,7 +26,7 @@
 
 ## 🧭 Navigation
 
-Total Artifacts: **12**
+Total Artifacts: **13**
 
 --- 
 ### 🏛️ Computer Science
@@ -43,7 +43,8 @@ Total Artifacts: **12**
 
 ### ☁️ Infrastructure
 
-- `2025-11-29` [linux_in_windows](posts/2025-11-29-linux_in_windows.md) `#wsl, DevOps`
+- `2025-11-29` [linux_in_windows](posts/2025-11-29-linux_in_windows.md) `#wsl, ubuntu, vscode, python, devops, git`
+- `2025-11-29` [wsl_개발환경_세팅](posts/2025-11-29-wsl_개발환경_세팅.md) `#wsl, DevOps`
 - `2025-11-27` [githubpage를_위한_static_page_settings](posts/2025-11-27-githubpage를_위한_static_page_settings.md) `#Git, DevOps, Next.js, GitHubActions`
 - `2025-11-26` [portfolio용_github_page](posts/2025-11-26-portfolio용_github_page.md) `#git, DevOps`
 
