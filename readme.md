@@ -26,7 +26,7 @@
 
 ## 🧭 Navigation
 
-Total Artifacts: **11**
+Total Artifacts: **13**
 
 --- 
 ### 🏛️ Computer Science
@@ -43,8 +43,13 @@ Total Artifacts: **11**
 
 ### ☁️ Infrastructure
 
-- `2025-11-27` [githubpage를_위한_static_page_settings](posts/2025-11-27-githubpage를_위한_static_page_settings.md) `#Git, DevOps`
+- `2025-11-27` [githubpage를_위한_static_page_settings](posts/2025-11-27-githubpage를_위한_static_page_settings.md) `#Git, DevOps, Next.js, GitHubActions`
 - `2025-11-26` [portfolio용_github_page](posts/2025-11-26-portfolio용_github_page.md) `#git, DevOps`
+
+### 🎨 Design
+
+- `2025-11-28` [Figma_Design_Desktop](posts/2025-11-28-Figma_Design_Desktop.md) `#Figma, UI/UX`
+- `2025-11-28` [Figma Design System Setup for Developers](posts/2025-11-28-Figma_Style.md) `#Figma, DesignSystem, TailwindCSS, Workflow`
 
 ### 🧠 Problem Solving
 

@@ -141,6 +141,38 @@ description: "System Design and Architecture Decisions."
 ## 🎓 Conclusion
 """
 
+TEMPLATE_DESIGN = """---
+title: "{title}"
+date: "{date}"
+category: "Design"
+tags: [{user_input}, UI/UX]
+description: "User Interface & User Experience Decisions."
+---
+
+# 🎨 `{title}`
+
+## 🎯 Design Goal (목표)
+> 
+
+## 🖼️ Prototype (Figma)
+- **Link:** [Figma 보러가기](Your_Figma_URL)
+![Mockup]()
+
+## 🎨 Design System
+| Type | Value | Note |
+| :--- | :--- | :--- |
+| **Primary Color** | `#000000` | |
+| **Typography** | `Pretendard` | |
+
+## 🔄 User Flow
+1. 사용자가 버튼 클릭
+2. 모달 팝업 등장
+3. 확인 시 페이지 이동
+
+## 💬 Feedback & Iteration
+- 
+"""
+
 # 5. Problem Solving (알고리즘) - ✅ "Local Path Mapping" 적용
 TEMPLATE_PS = """---
 title: "{title}"
@@ -232,18 +264,37 @@ description: "Retrospective and Thoughts."
 
 def get_template_and_category(user_input):
     keyword = user_input.lower()
+    
+    # 1. Problem Solving
     if any(k in keyword for k in ['algo', 'boj', 'leet', 'code', 'ps', '백준', '프로그래머스']):
         return "Problem Solving", TEMPLATE_PS
+    
+    # 2. Troubleshooting
     if any(k in keyword for k in ['error', 'fix', 'debug', 'fail', 'issue', '에러', '버그', '트러블']):
         return "Troubleshooting", TEMPLATE_TS
-    if any(k in keyword for k in ['docker', 'aws', 'k8s', 'jenkins', 'ci', 'cd', 'nginx', 'cloud', 'linux', 'server','git']):
+    
+    # 3. Infrastructure
+    if any(k in keyword for k in ['docker', 'aws', 'k8s', 'jenkins', 'ci', 'cd', 'nginx', 'cloud', 'linux', 'server', 'git']):
         return "Infrastructure", TEMPLATE_INFRA
-    if any(k in keyword for k in ['archi', 'design', 'pattern', 'msa', 'ddd', 'system', 'clean', '설계']):
+    
+    # 4. Design (UI/UX) [NEW! ✨] - Architecture보다 먼저 체크하거나 키워드를 명확히 분리
+    if any(k in keyword for k in ['figma', 'ui', 'ux', 'wireframe', 'mockup', 'gui', 'prototype', '피그마', '디자인']):
+        return "Design", TEMPLATE_DESIGN
+
+    # 5. Architecture (System Design)
+    # 'design' 키워드가 겹칠 수 있으므로, 명시적인 시스템 설계 키워드 위주로 남깁니다.
+    if any(k in keyword for k in ['archi', 'system', 'pattern', 'msa', 'ddd', 'clean', '설계', 'structure']):
         return "Architecture", TEMPLATE_ARCH
+        
+    # 6. CS
     if any(k in keyword for k in ['cs', 'os', 'net', 'db', 'data', 'struct', 'algorithm-theory']):
         return "Computer Science", TEMPLATE_CS
+        
+    # 7. Review
     if any(k in keyword for k in ['review', 'retro', 'diary', 'log', '회고', '후기', '일기']):
         return "Review & Retrospect", TEMPLATE_REVIEW
+        
+    # Default
     return "Language & Framework", TEMPLATE_LANG
 
 def slugify(text):
@@ -371,6 +422,7 @@ def update_readme():
         "Language & Framework",
         "Infrastructure",
         "Architecture",
+        "Design",
         "Problem Solving",
         "Troubleshooting",
         "Review & Retrospect"
@@ -426,6 +478,7 @@ def update_readme():
         elif cat == "Language & Framework": icon = "🛠️"
         elif cat == "Infrastructure": icon = "☁️"
         elif cat == "Architecture": icon = "📐"
+        elif cat == "Design": icon = "🎨"
         elif cat == "Problem Solving": icon = "🧠"
         elif cat == "Troubleshooting": icon = "🚨"
         elif cat == "Review & Retrospect": icon = "📝"
