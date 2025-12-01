@@ -1,6 +1,6 @@
 # 🧠 Engineering Knowledge Base
 
-> *"The goal of software architecture is to minimize the human resources required to build and maintain the required system."* - Robert C. Martin
+> _"The goal of software architecture is to minimize the human resources required to build and maintain the required system."_ - Robert C. Martin
 
 현업 엔지니어링 관점(Engineering Layer)으로 정리된 학습 저장소입니다.
 
@@ -28,23 +28,26 @@
 
 Total Artifacts: **13**
 
---- 
+---
+
 ### 🏛️ Computer Science
 
-- `2025-11-26` [javascript_engine_저장소](posts/2025-11-26-javascript_engine_저장소.md) `#CS, JavaScript, V8, Memory`
+- `2025-11-26` [javascript*engine*저장소](posts/2025-11-26-javascript_engine_저장소.md) `#CS, JavaScript, V8, Memory`
 
 ### 🛠️ Language & Framework
 
+- `2025-11-27` [브라우저*저장소\_4대장*정리](posts/2025-11-27-브라우저_저장소.md) `#FrontEnd, Browser, Storage, Cookie`
 - `2025-11-27` [RSC_Dynamic_VS_Static](posts/2025-11-27-RSC_Dynamic_VS_Static.md) `#Next.js, RSC, AppRouter, Optimization`
-- `2025-11-27` [RSC_중심_아키텍처_및_최적화](posts/2025-11-27-RSC_중심_아키텍처.md) `#Next.js, RSC, AppRouter, Optimization`
-- `2025-11-27` [브라우저_저장소_4대장_정리](posts/2025-11-27-브라우저_저장소.md) `#FrontEnd, Browser, Storage, Cookie`
+- `2025-11-27` [RSC*중심*아키텍처*및*최적화](posts/2025-11-27-RSC_중심_아키텍처.md) `#Next.js, RSC, AppRouter, Optimization`
 - `2025-11-26` [React의 생명주기: Definition부터 Mount까지](posts/2025-11-26-react_definition_그리고_call.md) `#React, JavaScript, Rendering, Lifecycle`
 - `2025-11-26` [React 화면 생성 과정과 렌더링 전략 (CSR vs SSG)](posts/2025-11-26-react_화면_생성_과정.md) `#React, Next.js, CSR, SSG, Vite`
 
 ### ☁️ Infrastructure
 
-- `2025-11-27` [githubpage를_위한_static_page_settings](posts/2025-11-27-githubpage를_위한_static_page_settings.md) `#Git, DevOps, Next.js, GitHubActions`
-- `2025-11-26` [portfolio용_github_page](posts/2025-11-26-portfolio용_github_page.md) `#git, DevOps`
+- `2025-11-29` [linux_in_windows](posts/2025-11-29-linux_in_windows.md) `#wsl, ubuntu, vscode, python, devops, git`
+- `2025-11-29` [wsl*개발환경*세팅](posts/2025-11-29-wsl_개발환경_세팅.md) `#wsl, DevOps`
+- `2025-11-27` [githubpage를\_위한\_static_page_settings](posts/2025-11-27-githubpage를_위한_static_page_settings.md) `#Git, DevOps, Next.js, GitHubActions`
+- `2025-11-26` [portfolio용\_github_page](posts/2025-11-26-portfolio용_github_page.md) `#git, DevOps`
 
 ### 🎨 Design
 
@@ -53,7 +56,6 @@ Total Artifacts: **13**
 
 ### 🧠 Problem Solving
 
-- `2025-11-25` [1967_트리의_지름](posts/2025-11-25-1967_트리의_지름.md) `#Algo, Algorithm`
-- `2025-11-25` [25757_임스와_함께하는_미니게임](posts/2025-11-25-25757_임스와_함께하는_미니게임.md) `#Algo, Algorithm`
-- `2025-11-25` [27434_팩토리얼3](posts/2025-11-25-27434_팩토리얼3.md) `#Algo, Algorithm`
-
+- `2025-11-25` [1967*트리의*지름](posts/2025-11-25-1967_트리의_지름.md) `#Algo, Algorithm`
+- `2025-11-25` [25757*임스와*함께하는\_미니게임](posts/2025-11-25-25757_임스와_함께하는_미니게임.md) `#Algo, Algorithm`
+- `2025-11-25` [27434\_팩토리얼3](posts/2025-11-25-27434_팩토리얼3.md) `#Algo, Algorithm`

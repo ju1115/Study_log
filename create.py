@@ -272,9 +272,7 @@ def get_template_and_category(user_input):
     # 2. Troubleshooting
     if any(k in keyword for k in ['error', 'fix', 'debug', 'fail', 'issue', '에러', '버그', '트러블']):
         return "Troubleshooting", TEMPLATE_TS
-    
-    # 3. Infrastructure
-    if any(k in keyword for k in ['docker', 'aws', 'k8s', 'jenkins', 'ci', 'cd', 'nginx', 'cloud', 'linux', 'server', 'git']):
+    if any(k in keyword for k in ['docker', 'aws', 'k8s', 'jenkins', 'ci', 'cd', 'nginx', 'cloud', 'linux', 'server','git','wsl']):
         return "Infrastructure", TEMPLATE_INFRA
     
     # 4. Design (UI/UX) [NEW! ✨] - Architecture보다 먼저 체크하거나 키워드를 명확히 분리
