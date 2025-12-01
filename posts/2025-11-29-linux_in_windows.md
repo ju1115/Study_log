@@ -59,7 +59,7 @@ sudo apt install -y nodejs
 ### Step 5. Gemini CLI 도구 설치
 터미널 환경에서 AI를 활용하기 위해 검증된 커뮤니티 버전의 CLI를 설치합니다.
 ```bash
-sudo npm install -g gemini-chat-cli
+sudo npm install -g @google/gemini-cli
 ```
 
 ### Step 6. Repository Clone (작업 공간 설정)
@@ -99,15 +99,6 @@ code .
 ```bash
 sudo apt update
 sudo apt install python-is-python3
-```
-
-## 🚀 Deployment Command
-```bash
-# API Key 환경 변수 설정
-export GEMINI_API_KEY="AIzaSy..."
-
-# 배포 스크립트 실행
-python create.py "linux_in_windows" -c wsl
 ```
 
 ## ⚠️ Check Point
