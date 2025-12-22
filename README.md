@@ -21,12 +21,12 @@
 - **목차 갱신**: `python create.py --update`
 
 </details>
- 
+
 ---
 
 ## 🧭 Navigation
 
-Total Artifacts: **17**
+Total Artifacts: **19**
 
 --- 
 ### 🏛️ Computer Science
@@ -35,6 +35,7 @@ Total Artifacts: **17**
 
 ### 🛠️ Language & Framework
 
+- `2025-12-03` [Next.js_Prettier_convention](posts/2025-12-03-Next.js_Prettier_convention.md) `#Next.js, Prettier, VSCode, TailwindCSS, DX`
 - `2025-11-27` [브라우저_저장소_4대장_정리](posts/2025-11-27-브라우저_저장소.md) `#FrontEnd, Browser, Storage, Cookie`
 - `2025-11-27` [RSC_Dynamic_VS_Static](posts/2025-11-27-RSC_Dynamic_VS_Static.md) `#Next.js, RSC, AppRouter, Optimization`
 - `2025-11-27` [RSC_중심_아키텍처_및_최적화](posts/2025-11-27-RSC_중심_아키텍처.md) `#Next.js, RSC, AppRouter, Optimization`
@@ -55,11 +56,10 @@ Total Artifacts: **17**
 
 ### 🧠 Problem Solving
 
+- `2025-12-22` [백준_2252_줄_세우기](posts/2025-12-22-백준_2252_줄_세우기.md) `#Algo, Algorithm`
 - `2025-12-11` [3447_버그왕](posts/2025-12-11-3447_버그왕.md) `#Algo, Algorithm`
-- `2025-12-11` [11444_피보나치_ 수_6](posts/2025-12-11-11444_피보나치_-수_6.md) `#Algo, Algorithm`
+- `2025-12-11` [11444_피보나치_수_6](posts/2025-12-11-11444_피보나치_수_6.md) `#Algo, Algorithm`
 - `2025-11-25` [1967_트리의_지름](posts/2025-11-25-1967_트리의_지름.md) `#Algo, Algorithm`
 - `2025-11-25` [25757_임스와_함께하는_미니게임](posts/2025-11-25-25757_임스와_함께하는_미니게임.md) `#Algo, Algorithm`
 - `2025-11-25` [27434_팩토리얼3](posts/2025-11-25-27434_팩토리얼3.md) `#Algo, Algorithm`
-- `2025-11-25` [25757_임스와_함께하는_미니게임](posts/2025-11-25-25757_임스와_함께하는_미니게임.md) `#Algo, Algorithm`
-- `2025-11-25` [1967_트리의_지름](posts/2025-11-25-1967_트리의_지름.md) `#Algo, Algorithm`
 
