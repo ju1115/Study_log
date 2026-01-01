@@ -26,7 +26,7 @@
 
 ## 🧭 Navigation
 
-Total Artifacts: **19**
+Total Artifacts: **20**
 
 --- 
 ### 🏛️ Computer Science
@@ -35,6 +35,7 @@ Total Artifacts: **19**
 
 ### 🛠️ Language & Framework
 
+- `2026-01-01` [Next.js_이미지관리](posts/2026-01-01-Next.js_이미지관리.md) `#Next.js`
 - `2025-12-03` [Next.js_Prettier_convention](posts/2025-12-03-Next.js_Prettier_convention.md) `#Next.js, Prettier, VSCode, TailwindCSS, DX`
 - `2025-11-27` [브라우저_저장소_4대장_정리](posts/2025-11-27-브라우저_저장소.md) `#FrontEnd, Browser, Storage, Cookie`
 - `2025-11-27` [RSC_Dynamic_VS_Static](posts/2025-11-27-RSC_Dynamic_VS_Static.md) `#Next.js, RSC, AppRouter, Optimization`
